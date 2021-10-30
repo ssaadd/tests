@@ -5,20 +5,19 @@ public class MyFirstProgram {
   public static void main(String[] args) {
     hello("world");
     hello("user");
-    hello("Alexei");
+    hello("Alex");
 
-    double l = 5;
-    System.out.println("Площадь квадрата со стороной " + l + " = " + area(l));
+    Square s = new Square(5);
+    System.out.println("Площадь квадрата со стороной " + s.l + " = " + area(s));
 
-    double a = 4;
-    double b = 6;
+    Rectangle r = new Rectangle(4, 6);
     System.out.println(
       "Площадь прямоугольника со сторонами " +
-      a +
+      r.a +
       " и " +
-      b +
+      r.b +
       " = " +
-      area(a, b)
+      area(r)
     );
   }
 
@@ -26,11 +25,11 @@ public class MyFirstProgram {
     System.out.println("Hello, " + somebody + "!");
   }
 
-  public static double area(double len) {
-    return len * len;
+  public static double area(Square s) {
+    return s.l * s.l;
   }
 
-  public static double area(double a, double b) {
-    return a * b;
+  public static double area(Rectangle r) {
+    return r.a * r.b;
   }
 }
